@@ -67,6 +67,7 @@ body {
     text-transform: uppercase;
     letter-spacing: -0.05em;
     line-height: 1;
+    text-wrap: balance;
   }
 }
 
@@ -100,8 +101,9 @@ body {
   }
   
   .hero-text-clamp {
-    font-size: clamp(2.5rem, 9vw, 8rem);
+    font-size: clamp(2.1rem, 9vw, 8rem);
     line-height: 0.9;
+    overflow-wrap: break-word;
   }
 }
 

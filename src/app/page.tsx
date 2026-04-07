@@ -190,8 +190,8 @@ export default function Home() {
 
       {/* --- HORIZONTAL EQUIPMENT REEL --- */}
       <section ref={sectionRef} className="h-screen bg-transparent overflow-hidden flex flex-col justify-center border-y-2 border-black/10">
-        <div className="px-8 mb-12">
-           <h2 className="text-6xl md:text-[8vw] font-black text-black leading-none tracking-tighter uppercase shrink-0">
+        <div className="px-6 md:px-8 mb-12">
+           <h2 className="text-4xl md:text-[8vw] font-black text-black leading-none tracking-tighter uppercase shrink-0">
             EQUIPMENT<span className="text-primary italic font-black">REEL</span>
           </h2>
         </div>
@@ -206,11 +206,11 @@ export default function Home() {
           ].map((item) => (
             <div 
               key={item.id} 
-              className="equipment-card min-w-[400px] md:min-w-[600px] h-[400px] md:h-[600px] bg-white border-4 border-black/10 hover:border-primary transition-colors p-12 flex flex-col justify-between group shadow-[8px_8px_0px_0px_rgba(0,0,0,0.05)]"
+              className="equipment-card min-w-[300px] md:min-w-[600px] h-[400px] md:h-[600px] bg-white border-4 border-black/10 hover:border-primary transition-colors p-6 md:p-12 flex flex-col justify-between group shadow-[8px_8px_0px_0px_rgba(0,0,0,0.05)]"
             >
                <span className="text-primary font-black text-xl italic tracking-widest">{item.type}</span>
                <div>
-                  <h3 className="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter mb-4 group-hover:text-primary transition-colors leading-none">{item.title}</h3>
+                  <h3 className="text-3xl md:text-7xl font-black text-black uppercase tracking-tighter mb-4 group-hover:text-primary transition-colors leading-none">{item.title}</h3>
                   <div className="flex items-center gap-4 border-t-2 border-black/10 pt-4">
                      <Cog className="animate-spin-slow text-black/40" size={24} />
                      <p className="text-black/60 font-bold tracking-widest uppercase">Capacity: {item.stats}</p>
@@ -248,16 +248,16 @@ export default function Home() {
       {/* --- STATS SECTION --- */}
       <section className="py-16 md:py-24 bg-white text-black relative overflow-hidden border-t-8 border-black">
         <div className="absolute inset-0 swiss-grid-pattern opacity-10 hidden md:block" />
-        <div className="max-w-[1440px] mx-auto px-6 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
           {[
             { label: "YEARS OF EXCELLENCE", value: "12+" },
             { label: "PROJECTS COMPLETED", value: "2,500+" },
             { label: "PRECISION RATING", value: "99.9%" },
             { label: "SAFETY INCIDENTS", value: "0" },
           ].map((stat, i) => (
-            <div key={i} className="flex flex-col border-l-4 border-primary pl-8">
-              <span className="text-7xl font-black italic tracking-tighter leading-none mb-2">{stat.value}</span>
-              <span className="text-xs font-bold tracking-[0.3em] text-primary uppercase">{stat.label}</span>
+            <div key={i} className="flex flex-col border-l-4 border-primary pl-4 md:pl-8">
+              <span className="text-5xl md:text-7xl font-black italic tracking-tighter leading-none mb-2">{stat.value}</span>
+              <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-primary uppercase">{stat.label}</span>
             </div>
           ))}
         </div>

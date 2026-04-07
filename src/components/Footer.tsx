@@ -20,8 +20,8 @@ export default function Footer() {
               <Zap className="text-white fill-white" size={32} />
             </div>
             <div className="flex flex-col">
-              <span className="font-black text-4xl tracking-tighter leading-none">UNITY CORE</span>
-              <span className="text-xs font-bold tracking-[0.4em] text-black uppercase">Precision / Strength</span>
+              <span className="font-black text-3xl md:text-4xl tracking-tighter leading-none">UNITY CORE</span>
+              <span className="text-[10px] md:text-xs font-bold tracking-[0.4em] text-black uppercase">Precision / Strength</span>
             </div>
           </Link>
           <p className="font-bold text-lg leading-tight uppercase tracking-tighter max-w-sm">
@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
 
         {/* Sitemap */}
-        <div className="md:col-span-4 grid grid-cols-2 gap-8 px-4 border-l-4 border-black/10">
+        <div className="md:col-span-4 grid grid-cols-2 gap-8 px-0 md:px-4 border-l-0 md:border-l-4 border-black/10">
           <div className="flex flex-col gap-4">
             <p className="text-[10px] font-black tracking-widest text-primary mb-4 uppercase">Navigation</p>
             {["Home", "Services", "About", "FAQ", "Contact"].map((item) => (
@@ -80,10 +80,10 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <a href="tel:+919871234567" className="flex items-center gap-3 font-black text-2xl hover:text-primary transition-colors">
+              <a href="tel:+919871234567" className="flex items-center gap-3 font-black text-xl md:text-2xl hover:text-primary transition-colors break-words">
                 <Phone size={20} className="text-primary" /> +91 9871 2345 67
               </a>
-              <a href="mailto:info@unitycore.in" className="flex items-center gap-3 font-black text-2xl hover:text-primary transition-colors">
+              <a href="mailto:info@unitycore.in" className="flex items-center gap-3 font-black text-xl md:text-2xl hover:text-primary transition-colors break-words">
                 <Mail size={20} className="text-primary" /> INFO@UNITYCORE.IN
               </a>
             </div>

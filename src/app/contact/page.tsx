@@ -42,7 +42,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-[clamp(2.5rem,8.5vw,8rem)] leading-[0.9] font-black uppercase tracking-[-0.05em] text-black break-words hyphens-auto"
+              className="hero-text-clamp text-black mt-4"
             >
               LET&apos;S HEAR<br/>
               <span className="text-primary">/ THE SPECS /</span><br/>
