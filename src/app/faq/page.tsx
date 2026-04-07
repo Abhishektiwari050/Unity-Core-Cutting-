@@ -53,24 +53,25 @@ export default function FAQ() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="px-6 md:px-8 pt-28 pb-12 border-b-4 border-black swiss-grid-pattern relative overflow-hidden bg-surface">
+      <section className="px-6 md:px-8 pt-28 pb-12 border-b-4 border-black relative overflow-hidden bg-surface">
+        <div className="absolute inset-0 dotted-grid pointer-events-none" />
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start relative z-10">
-          <div className="lg:col-span-8 lg:pr-24">
-            <motion.div 
+          <div className="lg:col-span-8">
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="inline-block bg-black text-white px-4 py-1 font-black text-xl mb-6"
             >
               04. COMMON QUESTIONS
             </motion.div>
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-[clamp(3.5rem,8.5vw,8rem)] leading-[0.9] font-black uppercase tracking-[-0.05em] text-black"
+              className="hero-text-clamp text-black"
             >
-              TECHNICAL<br/>
-              <span className="text-primary">/ DEPLOYMENT /</span><br/>
+              TECHNICAL<br />
+              <span className="text-primary italic">/ DEPLOYMENT /</span><br />
               SUPPORT.
             </motion.h1>
           </div>
@@ -82,8 +83,8 @@ export default function FAQ() {
               transition={{ delay: 0.2 }}
               className="border-4 border-black overflow-hidden h-[320px] relative bg-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]"
             >
-              <img 
-                src="/faq_hero_drill_1775531043997.png" 
+              <img
+                src="/faq_hero_drill_1775531043997.png"
                 alt="Technical Drill Specification"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-80"
               />
@@ -94,13 +95,13 @@ export default function FAQ() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="bg-surface-container-low p-8 border-4 border-black flex flex-col justify-end h-40 relative overflow-hidden text-black shadow-[8px_8px_0px_0px_rgba(255,48,0,1)]"
+              className="bg-surface-container-low p-8 border-4 border-black flex flex-col justify-center min-h-[160px] relative overflow-hidden text-black shadow-[8px_8px_0px_0px_rgba(255,48,0,1)]"
             >
-              <div className="absolute top-4 left-4 font-black uppercase text-xs tracking-widest opacity-30">TECH SPEC SUPPORT</div>
+              <div className="font-black uppercase text-xs tracking-[0.3em] opacity-30 mb-4">TECH SPEC SUPPORT</div>
               <p className="font-bold text-xl uppercase leading-tight opacity-70">FIND COMPREHENSIVE DATA ON DIAMOND CORE DRILLING, RCC CUTTING PROTOCOLS, AND SITE REQUIREMENTS.</p>
             </motion.div>
           </div>
@@ -111,7 +112,7 @@ export default function FAQ() {
       <section className="px-8 py-24 max-w-[1440px] mx-auto">
         <div className="flex flex-col gap-0">
           {faqs.map((faq, idx) => (
-            <motion.div 
+            <motion.div
               key={faq.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -121,10 +122,10 @@ export default function FAQ() {
               className={`group border-black bg-white transition-colors duration-300 cursor-pointer overflow-hidden ${idx === 0 ? 'border-4' : 'border-4 border-t-0'}`}
             >
               <div className={`flex justify-between items-center p-8 transition-colors duration-300 ${activeId === faq.id ? 'bg-primary text-white' : 'hover:bg-primary/5'}`}>
-                <div className="grid grid-cols-12 w-full gap-4 items-center">
-                  <span className={`col-span-1 font-black text-xl ${activeId === faq.id ? 'opacity-100' : 'opacity-50'}`}>{faq.id}</span>
-                  <h3 className="col-span-10 font-black text-2xl md:text-3xl uppercase tracking-tighter">{faq.question}</h3>
-                  <div className="col-span-1 flex justify-end text-black">
+                <div className="flex w-full gap-8 md:gap-12 items-center">
+                  <span className={`font-black text-xl md:text-2xl min-w-[40px] ${activeId === faq.id ? 'opacity-100' : 'opacity-30'}`}>{faq.id}</span>
+                  <h3 className="flex-1 font-black text-xl md:text-3xl uppercase tracking-tighter text-left">{faq.question}</h3>
+                  <div className="flex-shrink-0 text-black">
                     <motion.div
                       animate={{ rotate: activeId === faq.id ? 45 : 0 }}
                       transition={{ duration: 0.3 }}
@@ -135,7 +136,7 @@ export default function FAQ() {
                   </div>
                 </div>
               </div>
-              
+
               <AnimatePresence>
                 {activeId === faq.id && (
                   <motion.div
@@ -145,7 +146,7 @@ export default function FAQ() {
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                   >
                     <div className="p-8 pt-0 border-t-2 border-black/10">
-                       <p className="text-xl font-medium leading-relaxed opacity-70 mt-6 max-w-4xl text-black">
+                      <p className="text-xl font-medium leading-relaxed opacity-70 mt-6 max-w-4xl text-black">
                         {faq.answer}
                       </p>
                     </div>
@@ -161,11 +162,11 @@ export default function FAQ() {
       <section className="w-full bg-primary py-20 px-8 border-t-4 border-black">
         <div className="max-w-[1440px] mx-auto text-center">
           <h2 className="text-[clamp(2.5rem,6vw,6rem)] font-black uppercase text-white leading-none tracking-tighter mb-8">
-            STILL HAVE QUESTIONS?<br/>
+            STILL HAVE QUESTIONS?<br />
             CALL US NOW.
           </h2>
           <div className="flex flex-col md:flex-row justify-center gap-4">
-            <a 
+            <a
               href="tel:+91800UNITYCORE"
               className="bg-black text-white px-12 py-6 text-2xl font-black uppercase hover:bg-white hover:text-black transition-colors duration-300 inline-block border-b-8 border-r-8 border-white/20"
             >

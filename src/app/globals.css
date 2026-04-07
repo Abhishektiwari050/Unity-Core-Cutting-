@@ -83,8 +83,7 @@ body {
   .dotted-grid {
     background-image: radial-gradient(circle, #000 1px, transparent 1px);
     background-size: 30px 30px;
-    mask-image: linear-gradient(to bottom, black, transparent);
-    opacity: 0.05;
+    opacity: 0.12;
   }
 
   .swiss-diagonal {
