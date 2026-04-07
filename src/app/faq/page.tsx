@@ -121,10 +121,10 @@ export default function FAQ() {
               onClick={() => setActiveId(activeId === faq.id ? null : faq.id)}
               className={`group border-black bg-white transition-colors duration-300 cursor-pointer overflow-hidden ${idx === 0 ? 'border-4' : 'border-4 border-t-0'}`}
             >
-              <div className={`flex justify-between items-center p-8 transition-colors duration-300 ${activeId === faq.id ? 'bg-primary text-white' : 'hover:bg-primary/5'}`}>
-                <div className="flex w-full gap-8 md:gap-12 items-center">
-                  <span className={`font-black text-xl md:text-2xl min-w-[40px] ${activeId === faq.id ? 'opacity-100' : 'opacity-30'}`}>{faq.id}</span>
-                  <h3 className="flex-1 font-black text-xl md:text-3xl uppercase tracking-tighter text-left">{faq.question}</h3>
+              <div className={`flex justify-between items-center p-6 md:p-8 transition-colors duration-300 ${activeId === faq.id ? 'bg-primary text-white' : 'hover:bg-primary/5'}`}>
+                <div className="flex w-full gap-4 md:gap-12 items-center">
+                  <span className={`font-black text-lg md:text-2xl min-w-[32px] md:min-w-[40px] ${activeId === faq.id ? 'opacity-100' : 'opacity-30'}`}>{faq.id}</span>
+                  <h3 className="flex-1 font-black text-lg md:text-3xl uppercase tracking-tighter text-left leading-tight">{faq.question}</h3>
                   <div className="flex-shrink-0 text-black">
                     <motion.div
                       animate={{ rotate: activeId === faq.id ? 45 : 0 }}

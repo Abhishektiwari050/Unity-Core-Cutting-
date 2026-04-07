@@ -83,10 +83,10 @@ export default function Contact() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="px-8 py-24 max-w-[1440px] mx-auto bg-surface">
-        <div className="grid grid-cols-12 gap-16">
+      <section className="px-6 md:px-8 py-16 md:py-24 max-w-[1440px] mx-auto bg-surface">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-16">
           {/* Form */}
-          <div className="col-span-12 lg:col-span-7">
+          <div className="w-full lg:col-span-7">
             <h2 className="text-5xl font-black uppercase mb-12 text-black tracking-tighter italic">SUBMIT SPECIFICATIONS</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

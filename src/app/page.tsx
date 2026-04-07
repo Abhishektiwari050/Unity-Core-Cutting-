@@ -68,8 +68,8 @@ export default function Home() {
       <div className="swiss-noise fixed inset-0 z-50 pointer-events-none" />
       
       {/* --- HERO SECTION (Always Light) --- */}
-      <section className="h-[calc(100vh-80px)] min-h-[600px] flex flex-col pt-24 pb-12 px-6 md:px-8 relative overflow-hidden bg-[#F9F9F9]">
-        <div className="absolute inset-0 dotted-grid pointer-events-none" />
+      <section className="h-[calc(100vh-80px)] min-h-[600px] flex flex-col pt-20 md:pt-24 pb-12 px-6 md:px-8 relative overflow-hidden bg-[#F9F9F9]">
+        <div className="absolute inset-0 dotted-grid-red pointer-events-none" />
         <div className="absolute top-0 right-0 w-1/2 h-full swiss-diagonal opacity-10 hidden md:block" />
         
         <div className="max-w-[1440px] mx-auto w-full relative z-10">
