@@ -64,20 +64,20 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={mainWrapperRef} className="relative">
+    <div ref={mainWrapperRef} className="relative overflow-x-hidden w-full max-w-full">
       <div className="swiss-noise fixed inset-0 z-50 pointer-events-none" />
       
       {/* --- HERO SECTION (Always Light) --- */}
-      <section className="h-[calc(100vh-80px)] min-h-[600px] flex flex-col pt-20 md:pt-24 pb-12 px-6 md:px-8 relative overflow-hidden bg-[#F9F9F9]">
+      <section className="min-h-[600px] lg:h-[calc(100vh-80px)] flex flex-col pt-20 md:pt-24 pb-12 px-4 md:px-8 relative overflow-hidden bg-[#F9F9F9] border-b-8 border-black">
         <div className="absolute inset-0 dotted-grid-red pointer-events-none" />
         <div className="absolute top-0 right-0 w-1/2 h-full swiss-diagonal opacity-10 hidden md:block" />
         
         <div className="max-w-[1440px] mx-auto w-full relative z-10">
-          <div className="flex flex-col gap-4 mb-8">
-            <span className="bg-primary text-white font-black text-xs tracking-[0.4em] px-4 py-1 self-start border-r-4 border-b-4 border-black">
+          <div className="flex flex-col gap-4 mb-6 md:mb-8">
+            <span className="bg-primary text-white font-black text-[10px] md:text-xs tracking-[0.4em] px-3 md:px-4 py-1 self-start border-r-4 border-b-4 border-black uppercase text-nowrap">
               EST. 2012 / GURUGRAM
             </span>
-            <h1 className="hero-text-clamp font-black uppercase text-black leading-[0.85]">
+            <h1 className="hero-text-clamp font-black uppercase text-black leading-[0.85] tracking-tighter">
               PRECISION<br />
               <span className="text-primary italic">CORE</span> CUTTING
             </h1>
@@ -147,10 +147,10 @@ export default function Home() {
       </div>
 
       {/* --- BENTO GRID: OUR STRENGTHS --- */}
-      <section className="py-16 md:py-32 px-6 md:px-8 bg-transparent relative overflow-hidden">
-         <div className="max-w-[1440px] mx-auto mb-16">
-            <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-4 text-black">Core Strengths</h2>
-            <p className="text-xl font-bold text-primary tracking-widest uppercase italic">01. Why Choose Unity Core</p>
+      <section className="py-16 md:py-32 px-4 md:px-8 bg-transparent relative overflow-hidden w-full">
+         <div className="max-w-[1440px] mx-auto mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-8xl font-black uppercase tracking-tighter mb-4 text-black leading-none">Core Strengths</h2>
+            <p className="text-sm md:text-xl font-bold text-primary tracking-widest uppercase italic">01. Why Choose Unity Core</p>
          </div>
         
         <BentoGrid>
@@ -231,7 +231,7 @@ export default function Home() {
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="mt-8 bg-gradient-to-br from-black to-neutral-700 py-4 bg-clip-text text-center text-4xl font-black tracking-tight text-transparent md:text-7xl uppercase leading-none"
+          className="mt-8 bg-gradient-to-br from-black to-neutral-700 py-4 bg-clip-text text-center text-3xl font-black tracking-tight text-transparent md:text-7xl uppercase leading-none break-words px-4"
         >
           Built on Trust.<br />Driven by <span className="text-primary">Precision</span>.
         </motion.h1>
@@ -246,17 +246,17 @@ export default function Home() {
       </div>
 
       {/* --- STATS SECTION --- */}
-      <section className="py-16 md:py-24 bg-white text-black relative overflow-hidden border-t-8 border-black">
+      <section className="py-16 md:py-24 bg-white text-black relative overflow-hidden border-t-8 border-black w-full">
         <div className="absolute inset-0 swiss-grid-pattern opacity-10 hidden md:block" />
-        <div className="max-w-[1440px] mx-auto px-6 md:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
           {[
             { label: "YEARS OF EXCELLENCE", value: "12+" },
             { label: "PROJECTS COMPLETED", value: "2,500+" },
             { label: "PRECISION RATING", value: "99.9%" },
             { label: "SAFETY INCIDENTS", value: "0" },
           ].map((stat, i) => (
-            <div key={i} className="flex flex-col border-l-4 border-primary pl-4 md:pl-8">
-              <span className="text-5xl md:text-7xl font-black italic tracking-tighter leading-none mb-2">{stat.value}</span>
+            <div key={i} className="flex flex-col border-l-4 border-primary pl-4 md:pl-8 w-full overflow-hidden">
+              <span className="text-3xl md:text-7xl font-black italic tracking-tighter leading-none mb-2 break-all">{stat.value}</span>
               <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-primary uppercase">{stat.label}</span>
             </div>
           ))}

@@ -27,30 +27,30 @@ export default function IndustrialFAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-32 px-8 bg-zinc-50 border-y-8 border-black/10">
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
-        <div className="md:col-span-5">
-           <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-8">
+    <section className="py-16 md:py-32 px-4 md:px-8 bg-zinc-50 border-y-8 border-black/10 overflow-hidden">
+      <div className="max-w-[1440px] mx-auto flex flex-col md:grid md:grid-cols-12 gap-8 md:gap-16">
+        <div className="md:col-span-5 w-full">
+           <h2 className="text-3xl md:text-5xl lg:text-8xl font-black uppercase tracking-tighter leading-none mb-8 break-words text-black">
             ANY<br /><span className="text-primary italic">QUESTIONS?</span>
            </h2>
-           <div className="flex items-center gap-4 border-l-4 border-primary pl-8 py-4 bg-white border-2 border-black/10">
-              <HelpCircle className="text-primary" size={32} />
-              <p className="font-bold uppercase tracking-widest text-sm italic">04. Technical Support & Logistics</p>
+           <div className="flex items-center gap-4 border-l-4 border-primary pl-4 md:pl-8 py-4 bg-white border-2 border-black/10">
+              <HelpCircle className="text-primary shrink-0" size={24} />
+              <p className="font-bold uppercase tracking-widest text-[10px] md:text-sm italic text-black">04. Technical Support & Logistics</p>
            </div>
         </div>
 
-        <div className="md:col-span-7 flex flex-col divide-y-4 divide-black/10">
+        <div className="md:col-span-7 flex flex-col divide-y-4 divide-black/10 w-full overflow-hidden">
           {faqs.map((faq, i) => (
-            <div key={i} className="py-8">
+            <div key={i} className="py-6 md:py-8 w-full">
               <button
                 onClick={() => setActiveIndex(activeIndex === i ? null : i)}
-                className="w-full flex items-center justify-between group"
+                className="w-full flex items-center justify-between group gap-4 min-w-0"
               >
-                <span className={`text-2xl md:text-4xl font-black text-left uppercase transition-colors ${activeIndex === i ? "text-primary" : "text-black"}`}>
+                <span className={`flex-1 text-lg md:text-3xl font-black text-left uppercase transition-colors leading-tight break-words min-w-0 ${activeIndex === i ? "text-primary" : "text-black"}`}>
                   {faq.question}
                 </span>
-                <div className={`p-2 border-2 border-black/10 transition-transform ${activeIndex === i ? "rotate-180 border-primary" : "rotate-0"}`}>
-                  {activeIndex === i ? <Minus size={24} /> : <Plus size={24} />}
+                <div className={`p-2 border-2 border-black/10 transition-transform shrink-0 ${activeIndex === i ? "rotate-180 border-primary bg-primary text-white" : "rotate-0 text-black"}`}>
+                  {activeIndex === i ? <Minus size={20} /> : <Plus size={20} />}
                 </div>
               </button>
               
@@ -63,7 +63,7 @@ export default function IndustrialFAQ() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="mt-8 text-xl font-bold uppercase tracking-tight text-black/60 leading-tight border-l-4 border-primary pl-8">
+                    <p className="mt-6 md:mt-8 text-base md:text-xl font-bold uppercase tracking-tight text-black/60 leading-tight border-l-4 border-primary pl-4 md:pl-8 break-words">
                       {faq.answer}
                     </p>
                   </motion.div>

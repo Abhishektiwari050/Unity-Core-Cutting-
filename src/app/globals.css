@@ -101,10 +101,20 @@ body {
   }
   
   .hero-text-clamp {
-    font-size: clamp(2.1rem, 9vw, 8rem);
+    font-size: clamp(1.4rem, 8vw, 8rem);
     line-height: 0.9;
     overflow-wrap: break-word;
+    word-break: break-all;
   }
+}
+
+* {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden !important;
 }
 
 .marquee {

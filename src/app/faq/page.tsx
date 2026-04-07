@@ -1,181 +1,135 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Plus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus, HelpCircle, ArrowRight, MessageSquare, Phone, Mail } from "lucide-react";
+import Link from "next/link";
 
 const faqs = [
   {
-    id: "01",
-    question: "WHAT ARE THE PRIMARY CORE CUTTING NEEDS YOU SERVICE?",
-    answer: "We specialize in precision circular penetration for plumbing, HVAC, and electrical conduits. We also handle large-scale slab cutting, wall sawing, and controlled demolition for industrial and residential projects."
+    category: "Technical",
+    question: "WHAT IS THE MAXIMUM DRILLING DEPTH?",
+    answer: "Our standard equipment can drill up to 10 meters using extension rods. For deeper requirements, we utilize heavy-duty hydraulic diamond systems."
   },
   {
-    id: "02",
-    question: "DO YOU OPERATE BEYOND UTTAM NAGAR?",
-    answer: "Yes, we provide full coverage across Delhi NCR, including Gurugram, Noida, Faridabad, and Ghaziabad. Our mobile units are equipped for rapid site deployment."
+    category: "Logistics",
+    question: "DO YOU PROVIDE SERVICES OUTSIDE DELHI NCR?",
+    answer: "Yes, we operate pan-India for major industrial projects, with primary focus on Delhi NCR, Rajasthan, and Haryana."
   },
   {
-    id: "03",
-    question: "WHAT IS THE TYPICAL DURATION FOR A STANDARD CORE DRILL?",
-    answer: "A standard 4-inch core in reinforced concrete typically takes 15-30 minutes depending on rebar density and material hardness. Setup time is usually an additional 10-15 minutes."
+    category: "Safety",
+    question: "IS DIAMOND DRILLING VIBRATION-FREE?",
+    answer: "Absolutely. Diamond core drilling is a non-percussive process, making it vibration-free and safe for critical structural reinforcement."
   },
   {
-    id: "04",
-    question: "ARE YOUR OPERATORS AND PROCESSES CERTIFIED?",
-    answer: "Absolutely. All our operators are trained in structural safety protocols and heavy machinery operation. We are ISO 9001:2015 certified for structural modification services."
+    category: "Power",
+    question: "WHAT POWER SUPPLY IS REQUIRED ON SITE?",
+    answer: "We carry our own silent generators if site power is unavailable. Standard equipment runs on 230V or 415V three-phase power."
   },
   {
-    id: "05",
-    question: "DO YOU OFFER FREE SITE INSPECTIONS?",
-    answer: "Yes, for major projects, we provide complimentary structural assessments and site inspections to determine the optimal cutting path and ensure safety."
-  },
-  {
-    id: "06",
-    question: "WHAT PROJECT SIZES DO YOU HANDLE?",
-    answer: "We handle projects ranging from single residential core drills for AC installation to large-scale industrial floor modifications and high-rise structural alterations."
-  },
-  {
-    id: "07",
-    question: "DO YOU PROVIDE SERVICES ON WEEKENDS OR LATE HOURS?",
-    answer: "Yes, we understand site deadlines are critical. We are available for late-hour operations (until 11:30 PM) and weekend site delivery by prior appointment."
-  },
-  {
-    id: "08",
-    question: "WHICH CONCRETE TYPES CAN YOUR DIAMOND TOOLS PENETRATE?",
-    answer: "Our industrial-grade diamond-tipped tools can penetrate standard cement concrete, high-density Reinforced Cement Concrete (RCC), pre-stressed concrete, and even natural stone or heavy masonry."
+    category: "Cost",
+    question: "HOW DO YOU CALCULATE CORE DRILLING CHARGES?",
+    answer: "Pricing is based on diameter, depth, reinforcement density, and site accessibility. We provide transparent, itemized quotes."
   }
 ];
 
 export default function FAQ() {
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden w-full max-w-full">
       {/* Hero Section */}
-      <section className="px-6 md:px-8 pt-28 pb-12 border-b-4 border-black relative overflow-hidden bg-surface">
-        <div className="absolute inset-0 dotted-grid pointer-events-none" />
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start relative z-10">
-          <div className="lg:col-span-8">
-            <motion.div
+      <section className="px-4 md:px-8 pt-28 pb-12 border-b-8 border-black swiss-grid-pattern relative overflow-hidden bg-surface">
+        <div className="max-w-[1440px] mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-24 items-start relative z-10 w-full overflow-hidden">
+          <div className="lg:col-span-8 lg:pr-24 w-full">
+            <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="inline-block bg-black text-white px-4 py-1 font-black text-xl mb-6"
+              className="inline-block bg-black text-white px-4 py-1 font-black text-xs md:text-xl mb-6 uppercase"
             >
-              04. COMMON QUESTIONS
+              03. KNOWLEDGE BASE
             </motion.div>
-            <motion.h1
+            <motion.h1 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="hero-text-clamp text-black"
+              className="hero-text-clamp text-black break-words"
             >
-              TECHNICAL<br />
-              <span className="text-primary italic">/ DEPLOYMENT /</span><br />
-              SUPPORT.
+              TECHNICAL<br/>
+              <span className="text-primary italic">/ FAQ & /</span><br/>
+              RESOURCES.
             </motion.h1>
           </div>
-
-          <div className="lg:col-span-4 flex flex-col gap-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="border-4 border-black overflow-hidden h-[320px] relative bg-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]"
-            >
-              <img
-                src="/faq_hero_drill_1775531043997.png"
-                alt="Technical Drill Specification"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-80"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-6 left-6 text-white">
-                <p className="font-black text-xs tracking-widest uppercase mb-1">TECH ASSISTANCE</p>
-                <div className="h-1 w-12 bg-primary" />
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="bg-surface-container-low p-8 border-4 border-black flex flex-col justify-center min-h-[160px] relative overflow-hidden text-black shadow-[8px_8px_0px_0px_rgba(255,48,0,1)]"
-            >
-              <div className="font-black uppercase text-xs tracking-[0.3em] opacity-30 mb-4">TECH SPEC SUPPORT</div>
-              <p className="font-bold text-xl uppercase leading-tight opacity-70">FIND COMPREHENSIVE DATA ON DIAMOND CORE DRILLING, RCC CUTTING PROTOCOLS, AND SITE REQUIREMENTS.</p>
-            </motion.div>
+          
+          <div className="lg:col-span-4 flex flex-col gap-6 w-full">
+            <div className="bg-white border-4 border-black p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] w-full">
+              <h3 className="font-black text-xl md:text-2xl mb-4 uppercase leading-none">Need Direct Help?</h3>
+              <p className="font-bold text-sm md:text-lg uppercase opacity-60 mb-6 leading-tight">Our technical engineers are available for site visits and consultations.</p>
+              <Link 
+                href="/contact"
+                className="flex items-center justify-between bg-black text-white p-4 font-black text-sm uppercase hover:bg-primary transition-colors"
+              >
+                Connect Now <ArrowRight size={20} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Accordion List */}
-      <section className="px-8 py-24 max-w-[1440px] mx-auto">
-        <div className="flex flex-col gap-0">
-          {faqs.map((faq, idx) => (
-            <motion.div
-              key={faq.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
-              onClick={() => setActiveId(activeId === faq.id ? null : faq.id)}
-              className={`group border-black bg-white transition-colors duration-300 cursor-pointer overflow-hidden ${idx === 0 ? 'border-4' : 'border-4 border-t-0'}`}
-            >
-              <div className={`flex justify-between items-center p-6 md:p-8 transition-colors duration-300 ${activeId === faq.id ? 'bg-primary text-white' : 'hover:bg-primary/5'}`}>
-                <div className="flex w-full gap-4 md:gap-12 items-center">
-                  <span className={`font-black text-lg md:text-2xl min-w-[32px] md:min-w-[40px] ${activeId === faq.id ? 'opacity-100' : 'opacity-30'}`}>{faq.id}</span>
-                  <h3 className="flex-1 font-black text-lg md:text-3xl uppercase tracking-tighter text-left leading-tight">{faq.question}</h3>
-                  <div className="flex-shrink-0 text-black">
-                    <motion.div
-                      animate={{ rotate: activeId === faq.id ? 45 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className={activeId === faq.id ? 'text-white' : 'text-primary'}
-                    >
-                      <Plus size={40} />
-                    </motion.div>
-                  </div>
+      {/* Accordion Section */}
+      <section className="px-4 md:px-8 py-16 md:py-32 max-w-[1440px] mx-auto overflow-hidden w-full">
+        <div className="w-full flex flex-col divide-y-4 divide-black/10">
+          {faqs.map((faq, i) => (
+            <div key={i} className="py-6 md:py-10 w-full overflow-hidden">
+              <button
+                onClick={() => setActiveIndex(activeIndex === i ? null : i)}
+                className="w-full flex items-center justify-between group gap-4 min-w-0"
+              >
+                <div className="flex flex-col items-start min-w-0">
+                  <span className="text-[10px] md:text-xs font-black text-primary tracking-widest uppercase mb-2">{faq.category}</span>
+                  <span className={`text-lg md:text-4xl font-black text-left uppercase transition-colors leading-tight break-words min-w-0 ${activeIndex === i ? "text-primary" : "text-black"}`}>
+                    {faq.question}
+                  </span>
                 </div>
-              </div>
-
+                <div className={`p-2 border-2 border-black/10 transition-transform shrink-0 ${activeIndex === i ? "rotate-180 border-primary bg-primary text-white" : "rotate-0 text-black"}`}>
+                  {activeIndex === i ? <Minus size={20} /> : <Plus size={20} />}
+                </div>
+              </button>
+              
               <AnimatePresence>
-                {activeId === faq.id && (
+                {activeIndex === i && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
                   >
-                    <div className="p-8 pt-0 border-t-2 border-black/10">
-                      <p className="text-xl font-medium leading-relaxed opacity-70 mt-6 max-w-4xl text-black">
-                        {faq.answer}
-                      </p>
-                    </div>
+                    <p className="mt-8 text-base md:text-2xl font-bold uppercase tracking-tight text-black/60 leading-tight border-l-4 border-primary pl-4 md:pl-12 break-words max-w-3xl">
+                      {faq.answer}
+                    </p>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Extra CTA */}
-      <section className="w-full bg-primary py-20 px-8 border-t-4 border-black">
-        <div className="max-w-[1440px] mx-auto text-center">
-          <h2 className="text-[clamp(2.5rem,6vw,6rem)] font-black uppercase text-white leading-none tracking-tighter mb-8">
-            STILL HAVE QUESTIONS?<br />
-            CALL US NOW.
-          </h2>
-          <div className="flex flex-col md:flex-row justify-center gap-4">
-            <a
-              href="tel:+91800UNITYCORE"
-              className="bg-black text-white px-12 py-6 text-2xl font-black uppercase hover:bg-white hover:text-black transition-colors duration-300 inline-block border-b-8 border-r-8 border-white/20"
-            >
-              +91 800-UNITY-CORE
-            </a>
-            <button className="bg-white text-black px-12 py-6 text-2xl font-black uppercase hover:bg-black hover:text-white transition-colors duration-0 inline-block border-b-8 border-r-8 border-black">
-              BOOK SITE VISIT
-            </button>
-          </div>
+      {/* Contact Quick Links */}
+      <section className="px-4 md:px-8 pb-32 max-w-[1440px] mx-auto overflow-hidden w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-4 border-black w-full overflow-hidden shadow-[12px_12px_0px_0px_rgba(255,48,0,0.1)]">
+          {[
+            { icon: <Phone size={32} />, label: "Call Center", val: "+91 9871 2345 67" },
+            { icon: <Mail size={32} />, label: "Technical Support", val: "info@unitycore.in" },
+            { icon: <MessageSquare size={32} />, label: "WhatsApp Desk", val: "+91 9871 2345 67" }
+          ].map((item, idx) => (
+            <div key={idx} className="p-8 border-b-4 md:border-b-0 md:border-r-4 last:border-0 border-black flex flex-col items-center text-center group hover:bg-black transition-all">
+              <div className="text-primary group-hover:scale-110 transition-transform mb-4">{item.icon}</div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-black/40 group-hover:text-white/40 mb-2">{item.label}</span>
+              <span className="text-lg md:text-xl font-black uppercase text-black group-hover:text-white break-all">{item.val}</span>
+            </div>
+          ))}
         </div>
       </section>
     </div>
