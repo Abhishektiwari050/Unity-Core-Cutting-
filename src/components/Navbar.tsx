@@ -31,8 +31,8 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-8 py-4",
-        scrolled ? "bg-white/90 backdrop-blur-md border-b-2 border-black py-2" : "bg-transparent"
+        "fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 md:px-8 py-3 md:py-4",
+        scrolled ? "bg-white border-b-2 border-black py-2 shadow-sm" : "bg-transparent"
       )}
     >
       <div className="max-w-[1440px] mx-auto flex justify-between items-center">
@@ -42,8 +42,8 @@ export default function Navbar() {
             <Zap className="text-white fill-white" size={24} />
           </div>
           <div className="flex flex-col">
-            <span className="font-black text-2xl tracking-tighter leading-none text-black">UNITY CORE</span>
-            <span className="text-[10px] font-bold tracking-[0.3em] text-primary leading-none">PRCSN / CUTTING</span>
+            <span className="font-black text-xl md:text-2xl tracking-tighter leading-none text-black">UNITY CORE</span>
+            <span className="text-[8px] md:text-[10px] font-bold tracking-[0.3em] text-primary leading-none">PRCSN / CUTTING</span>
           </div>
         </Link>
 
@@ -94,14 +94,14 @@ export default function Navbar() {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-0 bg-white z-40 md:hidden flex flex-col p-8"
           >
-            <div className="flex justify-between items-center mb-16">
-               <span className="font-black text-2xl tracking-tighter text-black">UNITY CORE</span>
+            <div className="flex justify-between items-center mb-8 md:mb-16">
+               <span className="font-black text-xl md:text-2xl tracking-tighter text-black">UNITY CORE</span>
                <button 
                 onClick={() => setIsOpen(false)} 
-                className="text-black p-2"
+                className="text-black p-2 bg-zinc-100 rounded-full"
                 aria-label="Close menu"
                >
-                 <X size={32} />
+                 <X size={24} />
                </button>
             </div>
             <div className="flex flex-col gap-8">
@@ -110,7 +110,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-6xl font-black uppercase tracking-tighter text-black hover:text-primary transition-colors"
+                  className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-black hover:text-primary transition-colors leading-none"
                 >
                   <motion.span
                     initial={{ opacity: 0, x: 20 }}

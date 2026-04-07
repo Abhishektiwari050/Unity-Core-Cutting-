@@ -93,11 +93,15 @@ export default function Home() {
               <div className="absolute -top-24 -right-12 w-96 h-96 bg-primary opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity hidden md:block" />
               <div className="absolute -top-24 -right-12 w-96 h-96 bg-primary/5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity hidden md:block" />
               <div className="relative h-[320px] border-4 border-black overflow-hidden shadow-[16px_16px_0px_0px_rgba(0,0,0,0.1)]">
-                <img 
+              <div className="relative w-full h-full">
+                <Image 
                   src="/industrial_core_drill_hero.png" 
                   alt="Industrial Core Drilling" 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                  fill
+                  priority
+                  className="object-cover transform group-hover:scale-110 transition-transform duration-1000"
                 />
+              </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
                    <p className="text-white font-black uppercase text-xl">Operational Excellence</p>
                 </div>
@@ -123,7 +127,7 @@ export default function Home() {
       <div className="darken-trigger" />
 
       {/* --- REVEAL SECTION --- */}
-      <section className="px-8 bg-transparent overflow-hidden relative">
+      <section className="px-6 md:px-8 bg-transparent overflow-hidden relative">
         <div className="max-w-[1440px] mx-auto">
           <TextReveal 
             text="ENGINEERING THE FUTURE OF INFRASTRUCTURE THROUGH PRECISION" 
@@ -143,7 +147,7 @@ export default function Home() {
       </div>
 
       {/* --- BENTO GRID: OUR STRENGTHS --- */}
-      <section className="py-20 md:py-32 px-6 md:px-8 bg-transparent relative overflow-hidden">
+      <section className="py-16 md:py-32 px-6 md:px-8 bg-transparent relative overflow-hidden">
          <div className="max-w-[1440px] mx-auto mb-16">
             <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-4 text-black">Core Strengths</h2>
             <p className="text-xl font-bold text-primary tracking-widest uppercase italic">01. Why Choose Unity Core</p>
@@ -153,7 +157,7 @@ export default function Home() {
           <BentoGridItem
             title="Surgical Precision"
             description="Our Hilti-powered diamond drilling systems achieve accuracy within 0.1mm tolerance for critical infrastructure."
-            header={<div className="h-full min-h-[6rem] bg-zinc-100 overflow-hidden border-b border-black/5"><img src="/diamond_core_drilling.png" className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" alt="Precision" /></div>}
+            header={<div className="h-full min-h-[6rem] bg-zinc-100 overflow-hidden border-b border-black/5 relative"><Image src="/diamond_core_drilling.png" fill className="object-cover opacity-80 hover:opacity-100 transition-opacity" alt="Precision" /></div>}
             icon={<Target className="text-primary" size={32} />}
             className="md:col-span-2 text-black"
           />
@@ -172,7 +176,7 @@ export default function Home() {
           <BentoGridItem
             title="Advanced Fleet"
             description="Equipped with the latest Wire Saws and Wall Saws from global leaders."
-            header={<div className="h-full min-h-[6rem] bg-zinc-100 overflow-hidden border-b border-black/5"><img src="/rcc_precision_cutting.png" className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" alt="Advanced Fleet" /></div>}
+            header={<div className="h-full min-h-[6rem] bg-zinc-100 overflow-hidden border-b border-black/5 relative"><Image src="/rcc_precision_cutting.png" fill className="object-cover opacity-80 hover:opacity-100 transition-opacity" alt="Advanced Fleet" /></div>}
             icon={<Factory className="text-primary" size={32} />}
             className="md:col-span-2 text-black"
           />

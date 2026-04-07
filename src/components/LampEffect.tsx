@@ -51,9 +51,9 @@ export const LampContainer = ({
           <div className="absolute  w-40 h-full right-0 bg-[#F9F9F9]  bottom-0 z-20 [mask-image:linear-gradient(to_left,transparent,white)]" />
           <div className="absolute  w-full right-0 bg-[#F9F9F9] h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,transparent,white)]" />
         </motion.div>
-        <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-[#F9F9F9] blur-2xl"></div>
-        <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
-        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-primary opacity-50 blur-3xl"></div>
+        <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-[#F9F9F9] blur-xl"></div>
+        <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-sm"></div>
+        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-primary opacity-50 blur-2xl"></div>
         <motion.div
           initial={{ width: "8rem" }}
           whileInView={{ width: "16rem" }}
@@ -62,7 +62,7 @@ export const LampContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-primary-400 blur-2xl"
+          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-primary-400 blur-xl"
         ></motion.div>
         <motion.div
           initial={{ width: "15rem" }}

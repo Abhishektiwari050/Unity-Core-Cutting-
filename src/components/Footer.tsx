@@ -8,7 +8,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-surface-container-highest border-t-8 border-black text-black pt-24 pb-12 px-8 overflow-hidden relative">
+    <footer className="bg-surface-container-highest border-t-8 border-black text-black pt-16 md:pt-24 pb-8 md:pb-12 px-6 md:px-8 overflow-hidden relative">
       {/* Heavy Branding Stripe */}
       <div className="absolute top-0 right-0 w-1/3 h-full swiss-diagonal opacity-10 pointer-events-none" />
       
