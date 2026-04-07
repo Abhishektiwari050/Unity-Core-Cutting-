@@ -68,15 +68,16 @@ export default function Home() {
       <div className="swiss-noise fixed inset-0 z-50 pointer-events-none" />
       
       {/* --- HERO SECTION (Always Light) --- */}
-      <section className="min-h-[85vh] flex flex-col pt-28 pb-12 px-6 md:px-8 relative overflow-hidden bg-[#F9F9F9]">
-        <div className="absolute top-0 right-0 w-1/2 h-full swiss-diagonal opacity-20 hidden md:block" />
+      <section className="h-[calc(100vh-80px)] min-h-[600px] flex flex-col pt-24 pb-12 px-6 md:px-8 relative overflow-hidden bg-[#F9F9F9]">
+        <div className="absolute inset-0 dotted-grid pointer-events-none" />
+        <div className="absolute top-0 right-0 w-1/2 h-full swiss-diagonal opacity-10 hidden md:block" />
         
         <div className="max-w-[1440px] mx-auto w-full relative z-10">
           <div className="flex flex-col gap-4 mb-8">
             <span className="bg-primary text-white font-black text-xs tracking-[0.4em] px-4 py-1 self-start border-r-4 border-b-4 border-black">
               EST. 2012 / GURUGRAM
             </span>
-            <h1 className="hero-text-clamp font-black uppercase text-black">
+            <h1 className="hero-text-clamp font-black uppercase text-black leading-[0.85]">
               PRECISION<br />
               <span className="text-primary italic">CORE</span> CUTTING
             </h1>
@@ -85,7 +86,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start transition-all duration-700 ease-in-out">
             <div className="md:col-span-8">
               <p className="text-2xl md:text-3xl font-bold uppercase tracking-tight leading-tight max-w-2xl text-black/80 mt-6">
-                INDUSTRIAL STRENGTH MEETS SURGICAL ACCURACY. WE ARE THE GOLD STANDARD IN CORE DRILLING & DEMOLITION.
+                INDUSTRIAL STRENGTH MEETS SURGICAL ACCURACY. WE ARE THE GOLD STANDARD IN CORE DRILLING.
               </p>
             </div>
             <div className="md:col-span-4 flex flex-col gap-6 relative group">
